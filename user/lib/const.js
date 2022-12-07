@@ -5,5 +5,6 @@ exports.JWT = {
 
 exports.ROLES = {
   ADMIN: "admin",
+  SUPERADMIN: "superadmin",
   USER: "user",
 };

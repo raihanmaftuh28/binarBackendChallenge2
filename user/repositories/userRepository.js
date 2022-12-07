@@ -6,6 +6,11 @@ class UserRepository {
     return getPost;
   }
 
+  static async getUserByEmail({ email }) {
+    const getUser = await User.findOne({ where: { email } });
+    return getUser;
+  }
+
   static async getUserData() {
     const getUser = await User.findAll();
     return getUser;
@@ -22,6 +27,11 @@ class UserRepository {
       { name, email, password, role },
       { where: { id } }
     );
+    return userUpdated;
+  }
+
+  static async updateRole({ email, role }) {
+    const userUpdated = await User.update({ role }, { where: { email } });
     return userUpdated;
   }
 
